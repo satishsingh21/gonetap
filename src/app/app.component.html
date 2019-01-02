@@ -1,0 +1,10 @@
+<h2>Google One Tap POC</h2>
+<button *ngIf="!isLoggedIn" type="button" (click)="retrieveGoogle()">Login</button>
+<button *ngIf="!isLoggedIn" type="button" (click)="signUpWithGoogle()">Google Sign-up</button>
+<h3 *ngIf="isLoggedIn">Hello {{currentUser.name}}, your email is {{currentUser.emailId}}.</h3>
+<h3>Users: </h3>
+<button type="button" (click)="fetchUsers()">Get Registered Users</button>
+<ul>
+    <li *ngFor="let user of users">{{ user.name }}</li>
+</ul>
+<button *ngIf="isLoggedIn" type="button" (click)="logout()">Logout</button>
